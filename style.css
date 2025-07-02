@@ -23,8 +23,8 @@ body {
   text-align: right;
   margin: 0;
   padding: 20px;
-  background-color: #f4f7f6;
-  color: #333;
+  /* background-color: #f4f7f6; */
+  /* color: #333; */
   line-height: 1.6;
 }
 
@@ -146,17 +146,43 @@ h2 {
   width: 150px;
   cursor: pointer;
 }
+.text-overlay {
+  position: absolute;
+  top: 55%; /* حفظ موقعیت عمودی (65% از بالا) */
+  /* --- تغییرات برای شروع از سمت چپ --- */
+  transform: translateY(-40%); /* فقط برای وسط‌چین کردن عمودی باقی می‌ماند */
+  color: white;
+  font-size: 12px;
+  font-family: "Arial", sans-serif;
+  line-height: 0.8rem;
+  text-align: left; /* اطمینان از اینکه متن داخل کارت از چپ تراز است */
+  padding: 5px 5px;
+  cursor: grab;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  user-select: none;
+  z-index: 10;
+  min-width: 90%; /* برای مثال 90%، که با left: 5%، یک حاشیه 5% در سمت راست هم ایجاد کند */
+  max-width: 90%; /* این باعث می‌شود کارت به اندازه 90% عرض بگیرد */
+  /* اگر می‌خواهید عرض کارت به اندازه محتوا باشد (و از چپ شروع شود)، این دو خط را حذف کنید. */
+  box-sizing: border-box;
+  /* Glassmorphism Styles */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+}
 
 .wallpaper-container {
   position: relative;
   width: 300px; /* عرض استاندارد برای پیش‌نمایش موبایل */
   height: 650px; /* نسبت 16:9 برای موبایل (300 * 1.77) - می‌توانید تغییر دهید */
   margin: 30px auto;
-  /* border: 5px solid #007bff; */
-  border-radius: 12px;
+  /* border-radius: 12px; */
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  background-color: #eee; /* در صورتی که عکسی انتخاب نشده باشد */
 }
 
 .background-img {
@@ -243,12 +269,8 @@ h2 {
 .text-overlay {
   position: absolute;
   top: 55%; /* حفظ موقعیت عمودی (65% از بالا) */
-
   /* --- تغییرات برای شروع از سمت چپ --- */
   transform: translateY(-40%); /* فقط برای وسط‌چین کردن عمودی باقی می‌ماند */
-  /* transform: translate(-50%, -50%); حذف شد زیرا باعث وسط‌چین شدن افقی می‌شد */
-  /* ---------------------------------- */
-
   color: white;
   font-size: 12px;
   font-family: "Arial", sans-serif;
@@ -271,7 +293,6 @@ h2 {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9.9px);
   -webkit-backdrop-filter: blur(9.9px);
-  border: 1px solid rgba(255, 255, 255, 0.19);
 }
 
 .wallpaper-container {
@@ -279,10 +300,8 @@ h2 {
   width: 1170px; /* عرض 1170 پیکسل */
   height: 2532px; /* ارتفاع 2532 پیکسل */
   margin: 30px auto;
-
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  background-color: #eee;
 }
 
 /* Responsive adjustments */
@@ -321,8 +340,8 @@ h2 {
     height: calc(
       250px * (2532 / 1170)
     ); /* ارتفاع را بر اساس نسبت تنظیم می‌کنیم (~541px) */
-    border-width: 3px; /* ضخامت border را برای نمایش بهتر کاهش می‌دهیم */
-    border-radius: 8px;
+
+    /* border-radius: 8px; */
   }
   .download-btn {
     width: 90%;

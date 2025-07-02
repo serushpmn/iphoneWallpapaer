@@ -155,10 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentContainerWidth = wallpaperContainer.offsetWidth;
         const currentContainerHeight = wallpaperContainer.offsetHeight;
 
-        // محاسبه مقیاس. این مقیاس، نسبت ابعاد نهایی به ابعاد نمایش داده شده است.
-        // html2canvas عنصر را با این مقیاس رندر می‌کند.
-        // مهم: ما دیگر width و height را به html2canvas نمی‌دهیم تا از کشیدگی جلوگیری شود.
-        // html2canvas با scale، canvas را با ابعاد (currentWidth * scale) و (currentHeight * scale) تولید می‌کند.
         const scaleX = targetWidth / currentContainerWidth;
         const scaleY = targetHeight / currentContainerHeight;
         const finalScale = Math.max(scaleX, scaleY); // استفاده از بزرگترین مقیاس برای اطمینان از پوشش کامل و عدم افت کیفیت
@@ -168,14 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
             allowTaint: true,
             logging: true,
             scale: finalScale,
-            // دیگر نیازی به تنظیم width و height مستقیم در اینجا نیست
-            // اگر html2canvas خودش را به ابعاد دقیق تغییر ندهد، پس از .then() آن را تغییر می‌دهیم.
+         
         }).then(canvas => {
             downloadBtn.style.display = originalDisplay;
-
-            // --- مرحله جدید: برش (Crop) یا تغییر ابعاد (Resize) Canvas نهایی ---
-            // html2canvas ممکن است یک canvas بزرگتر از targetWidth/targetHeight تولید کند.
-            // ما می‌خواهیم آن را دقیقا به ابعاد 1170x2532 برش دهیم یا تغییر ابعاد دهیم.
 
             const finalCanvas = document.createElement('canvas');
             finalCanvas.width = targetWidth;
