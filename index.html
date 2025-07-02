@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سازنده والپیپر موبایل</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>والپیپر موبایل بسازید!</h1>
+
+      <div class="image-selection">
+        <h2>۱. عکس مورد نظر را انتخاب کنید:</h2>
+        <div class="image-grid" id="imageGrid"></div>
+      </div>
+
+      <div class="text-input-section">
+        <h2>۲. متن خود را بنویسید:</h2>
+        <input
+          type="text"
+          id="textInput"
+          placeholder="متن خود را اینجا وارد کنید..."
+          maxlength="240"
+        />
+        <div class="text-options">
+          <label for="fontSize">اندازه متن:</label>
+          <input type="range" id="fontSize" min="16" max="72" value="24" />
+
+          <label for="textColor">رنگ متن:</label>
+          <input type="color" id="textColor" value="#FFFFFF" />
+
+          <label for="fontFamily">فونت:</label>
+          <select id="fontFamily">
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Vazirmatn, sans-serif">وزیرمتن (فارسی)</option>
+            <option value="Samim, sans-serif">صمیم (فارسی)</option>
+            <option value="B Titr, sans-serif">بی تیتر (فارسی)</option>
+            <option value="Impact, sans-serif">Impact</option>
+            <option value="Georgia, serif">Georgia</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="preview-section">
+        <h2>۳. پیش‌نمایش و تنظیم:</h2>
+        <div id="wallpaperContainer" class="wallpaper-container">
+          <img
+            id="backgroundImg"
+            src=""
+            alt="پس‌زمینه والپیپر"
+            class="background-img"
+          />
+          <div id="textOverlay" class="text-overlay" contenteditable="false">
+            متن شما اینجا
+          </div>
+        </div>
+        <p class="instruction">متن را روی عکس بکشید و رها کنید تا جابجا شود.</p>
+      </div>
+
+      <button id="downloadBtn" class="download-btn">۴. دانلود والپیپر</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
