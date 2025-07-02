@@ -150,7 +150,7 @@ h2 {
 .wallpaper-container {
   position: relative;
   width: 300px; /* عرض استاندارد برای پیش‌نمایش موبایل */
-  height: 533px; /* نسبت 16:9 برای موبایل (300 * 1.77) - می‌توانید تغییر دهید */
+  height: 650px; /* نسبت 16:9 برای موبایل (300 * 1.77) - می‌توانید تغییر دهید */
   margin: 30px auto;
   /* border: 5px solid #007bff; */
   border-radius: 12px;
@@ -165,25 +165,6 @@ h2 {
   object-fit: cover;
   display: block;
   user-select: none; /* برای جلوگیری از انتخاب عکس */
-}
-
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* برای قرار دادن دقیقاً در مرکز */
-  color: white;
-  font-size: 24px;
-  font-family: "Arial", sans-serif;
-  text-align: left;
-  padding: 5px 10px;
-  cursor: grab; /* نشانگر ماوس برای جابجایی */
-  white-space: pre-wrap; /* حفظ شکست خط‌ها */
-  word-wrap: break-word; /* شکستن کلمات طولانی */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* سایه برای خوانایی بهتر متن */
-  user-select: none; /* برای جلوگیری از انتخاب متن در هنگام جابجایی */
-  z-index: 10; /* مطمئن شدن از اینکه متن روی عکس قرار می‌گیرد */
-  min-width: 50px; /* حداقل عرض برای گرفتن متن */
 }
 
 .instruction {
@@ -258,62 +239,45 @@ h2 {
     font-size: 1.1em;
   }
 }
-/* فایل style.css */
-
-/* ... کدهای قبلی ... */
 
 .text-overlay {
-  position: absolute;
-  top: 65%;
+  position: absolute; /* Declared once */
+  top: 65%; /* Keeping the 65% from your last update for lower positioning */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* For precise centering with top/left */
   color: white;
-  font-size: 14px;
-  font-family: "Arial", sans-serif;
-  line-height: 1.2rem;
-  /* text-align: center; */
-  padding: 5px 5px; /* پدینگ بیشتر برای ظاهر بهتر کارت */
-  cursor: grab;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  user-select: none;
-  z-index: 10;
-  min-width: 95%; /* حداقل عرض برای کارت */
-  max-width: 95%; /* حداکثر عرض برای جلوگیری از پر شدن کامل صفحه */
-  box-sizing: border-box; /* پدینگ در عرض محاسبه شود */
-
-  /* --- شروع استایل‌های Glassmorphism --- */
-  background: rgba(255, 255, 255, 0.15); /* پس‌زمینه سفید با شفافیت 15% */
-  backdrop-filter: blur(10px); /* افکت بلور روی پس‌زمینه */
-  -webkit-backdrop-filter: blur(10px); /* برای سازگاری با مرورگرهای وب‌کیت */
-  border-radius: 15px; /* گوشه‌های گرد */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* حاشیه شفاف */
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* سایه برای عمق */
-  /* --- پایان استایل‌های Glassmorphism --- */
+  font-size: 12px; /* Keeping 12px as per your last update */
+  font-family: "Arial", sans-serif; /* Default, can be overridden by JS */
+  line-height: 0.8rem; /* Keeping 0.8rem from your last update */
+  padding: 5px 5px; /* Keeping 5px padding */
+  cursor: grab; /* For drag-and-drop */
+  white-space: pre-wrap; /* Preserve line breaks */
+  word-wrap: break-word; /* Break long words */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+  user-select: none; /* Prevent text selection during drag */
+  z-index: 10; /* Ensure text is above image */
+  min-width: 95%; /* Minimum width for the card effect */
+  max-width: 95%; /* Maximum width to prevent filling the entire screen */
+  box-sizing: border-box; /* Include padding in width calculation */
+  /* Glassmorphism Styles (as per your last specific request) */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+  border: 1px solid rgba(255, 255, 255, 0.19); /* Using 0.19 from your latest input */
 }
-/* فایل style.css */
-
-/* ... کدهای قبلی ... */
 
 .wallpaper-container {
   position: relative;
-  /* تنظیم ابعاد دقیق برای نسبت 19.5:9 با رزولوشن مورد نظر (1170 × 2532) */
-  /* می‌تونید از مقادیر اصلی رزولوشن برای عرض و ارتفاع استفاده کنید */
   width: 1170px; /* عرض 1170 پیکسل */
   height: 2532px; /* ارتفاع 2532 پیکسل */
   margin: 30px auto;
-  border: 5px solid #007bff;
-  border-radius: 12px;
+
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   background-color: #eee;
 }
-
-/* نکته: برای نمایش در صفحه مرورگر، این ابعاد بسیار بزرگ هستند و از دید کاربر خارج می‌شوند. */
-/* برای حل این مشکل، در بخش بعدی (JavaScript) یک تغییر مهم اعمال می‌کنیم. */
-
-/* ... کدهای قبلی ... */
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
@@ -368,16 +332,3 @@ h2 {
     /* مطمئن شوید که سایر استایل‌ها (مثل border) مطابق انتظار هستند */
   }
 }
-
-/* ... کدهای قبلی ... */
-
-/* ... کدهای قبلی ... */
-/* فونت‌های فارسی (مثال) */
-/* حتماً فایل‌های فونت را در پوشه 'fonts' قرار دهید */
-/* @font-face {
-    font-family: 'Vazirmatn';
-    src: url('fonts/Vazirmatn-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-} */
-/* ... و برای هر فونت فارسی دیگر */
