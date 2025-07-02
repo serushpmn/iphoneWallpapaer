@@ -231,7 +231,7 @@ h2 {
   }
   .wallpaper-container {
     width: 250px;
-    height: 444px; /* نسبت 16:9 برای 250 پیکسل */
+    height: 540px; /* نسبت 16:9 برای 250 پیکسل */
   }
   .download-btn {
     width: 90%;
@@ -241,31 +241,37 @@ h2 {
 }
 
 .text-overlay {
-  position: absolute; /* Declared once */
-  top: 65%; /* Keeping the 65% from your last update for lower positioning */
-  left: 50%;
-  transform: translate(-50%, -50%); /* For precise centering with top/left */
+  position: absolute;
+  top: 55%; /* حفظ موقعیت عمودی (65% از بالا) */
+
+  /* --- تغییرات برای شروع از سمت چپ --- */
+  transform: translateY(-40%); /* فقط برای وسط‌چین کردن عمودی باقی می‌ماند */
+  /* transform: translate(-50%, -50%); حذف شد زیرا باعث وسط‌چین شدن افقی می‌شد */
+  /* ---------------------------------- */
+
   color: white;
-  font-size: 12px; /* Keeping 12px as per your last update */
-  font-family: "Arial", sans-serif; /* Default, can be overridden by JS */
-  line-height: 0.8rem; /* Keeping 0.8rem from your last update */
-  padding: 5px 5px; /* Keeping 5px padding */
-  cursor: grab; /* For drag-and-drop */
-  white-space: pre-wrap; /* Preserve line breaks */
-  word-wrap: break-word; /* Break long words */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
-  user-select: none; /* Prevent text selection during drag */
-  z-index: 10; /* Ensure text is above image */
-  min-width: 95%; /* Minimum width for the card effect */
-  max-width: 95%; /* Maximum width to prevent filling the entire screen */
-  box-sizing: border-box; /* Include padding in width calculation */
-  /* Glassmorphism Styles (as per your last specific request) */
+  font-size: 12px;
+  font-family: "Arial", sans-serif;
+  line-height: 0.8rem;
+  text-align: left; /* اطمینان از اینکه متن داخل کارت از چپ تراز است */
+  padding: 5px 5px;
+  cursor: grab;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  user-select: none;
+  z-index: 10;
+  min-width: 90%; /* برای مثال 90%، که با left: 5%، یک حاشیه 5% در سمت راست هم ایجاد کند */
+  max-width: 90%; /* این باعث می‌شود کارت به اندازه 90% عرض بگیرد */
+  /* اگر می‌خواهید عرض کارت به اندازه محتوا باشد (و از چپ شروع شود)، این دو خط را حذف کنید. */
+  box-sizing: border-box;
+  /* Glassmorphism Styles */
   background: rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9.9px);
   -webkit-backdrop-filter: blur(9.9px);
-  border: 1px solid rgba(255, 255, 255, 0.19); /* Using 0.19 from your latest input */
+  border: 1px solid rgba(255, 255, 255, 0.19);
 }
 
 .wallpaper-container {

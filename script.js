@@ -133,8 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
         wallpaperContainer.style.width = `${newWidth}px`;
         wallpaperContainer.style.height = `${newHeight}px`;
 
-        const currentLeft = parseFloat(textOverlay.style.left) || 50;
-        const currentTop = parseFloat(textOverlay.style.top) || 65;
+        const currentLeft = parseFloat(textOverlay.style.left) || 5;
+        const currentTop = parseFloat(textOverlay.style.top) || 55;
         
         textOverlay.style.left = `${currentLeft}%`;
         textOverlay.style.top = `${currentTop}%`;
