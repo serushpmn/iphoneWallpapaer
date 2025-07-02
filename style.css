@@ -29,7 +29,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 90vw;
   margin: 30px auto;
   background-color: #fff;
   padding: 30px;
@@ -148,9 +148,10 @@ h2 {
 }
 .text-overlay {
   position: absolute;
-  top: 55%; /* حفظ موقعیت عمودی (65% از بالا) */
-  /* --- تغییرات برای شروع از سمت چپ --- */
-  transform: translateY(-40%); /* فقط برای وسط‌چین کردن عمودی باقی می‌ماند */
+  top: 55%; /* Changed from 65% to 55% */
+  left: 5%; /* Added back to start from the left */
+  transform: translateY(-40%); /* Changed from -50% to -40% */
+
   color: white;
   font-size: 12px;
   font-family: "Arial", sans-serif;
@@ -167,12 +168,12 @@ h2 {
   max-width: 90%; /* این باعث می‌شود کارت به اندازه 90% عرض بگیرد */
   /* اگر می‌خواهید عرض کارت به اندازه محتوا باشد (و از چپ شروع شود)، این دو خط را حذف کنید. */
   box-sizing: border-box;
-  /* Glassmorphism Styles */
-  background: rgba(255, 255, 255, 0.15);
+
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.75);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(9.9px);
-  -webkit-backdrop-filter: blur(9.9px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .wallpaper-container {
@@ -264,35 +265,6 @@ h2 {
     padding: 12px 20px;
     font-size: 1.1em;
   }
-}
-
-.text-overlay {
-  position: absolute;
-  top: 55%; /* حفظ موقعیت عمودی (65% از بالا) */
-  /* --- تغییرات برای شروع از سمت چپ --- */
-  transform: translateY(-40%); /* فقط برای وسط‌چین کردن عمودی باقی می‌ماند */
-  color: white;
-  font-size: 12px;
-  font-family: "Arial", sans-serif;
-  line-height: 0.8rem;
-  text-align: left; /* اطمینان از اینکه متن داخل کارت از چپ تراز است */
-  padding: 5px 5px;
-  cursor: grab;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  user-select: none;
-  z-index: 10;
-  min-width: 90%; /* برای مثال 90%، که با left: 5%، یک حاشیه 5% در سمت راست هم ایجاد کند */
-  max-width: 90%; /* این باعث می‌شود کارت به اندازه 90% عرض بگیرد */
-  /* اگر می‌خواهید عرض کارت به اندازه محتوا باشد (و از چپ شروع شود)، این دو خط را حذف کنید. */
-  box-sizing: border-box;
-  /* Glassmorphism Styles */
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(9.9px);
-  -webkit-backdrop-filter: blur(9.9px);
 }
 
 .wallpaper-container {
